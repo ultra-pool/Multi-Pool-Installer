@@ -1,5 +1,9 @@
+## Update regarding this repo and the future of it. As many of you know I have been gone for many months. Things were going great in my life and then tragedy stuck, and no I am not talking about COVID. Im not going to spin a sad story or give any other details other then, depression is a real thing. Anyone you know or yourself may suffer terribly from it. Don't ignore the signs, don't laugh it off, or take their word that they are ok if its a relative or friend because they are not ok. And don't go at it alone if you suffer silently from it. For those that feel the desire this all doantion addresses have been updated. 
 
-# Ultimate Crypto-Server Setup Installer! 🚀
+## There are several forks of this repo now that are being maintained by some great people and plenty of help on the discord. Be safe eveyone. - CPB
+
+
+## Ultimate Crypto-Server Setup Installer! 🚀
 
 ## This is opened as a public beta - all features are not final!
 
@@ -50,18 +54,18 @@ curl https://raw.githubusercontent.com/cryptopool-builders/Multi-Pool-Installer/
 
 ## ▶️ Usage
 
-So I just really realized my first line of instructions for the script is wrong and not clear. So I am updating it so going forward there are no issues. 
+You may run the installer under root or an existing account. If you already have a user account created on your server that account must already be part of the sudo group.
 
-You MUST initially run the installer under root. If you already have a user account created on your server you MUST  ```sudo su```  and drop to the root command line and run the above curl command. You MUST let the installer create a new user account for you. There are permission settings that are going on in the backend that NEEDS to be done before running the  ```mutipool```  command.
-
-After creating the new user you MUST reboot the machine in to the new account. If you are doing a multi server setup you MUST do this on each server. My time has become limited to how much I can update this FREE script. So if you need something changed or fixed, consider donating instead of complaining it doesnt work. 
+If you are running as root the installer will prompt you to create a new account.
 
 <p align="center">
   <img src="./.assets/naughty.png" alt="naughty"
        width="555" height="185">
 </p>
 
-After rebooting the server to your new user to start the installer type:
+After creating the new user account or updating your existing account, you MUST reboot the machine in order for the accounts permissions to be updated properly.
+
+After rebooting the server to your user to start the installer type:
 ```
 multipool
 ```
@@ -241,21 +245,23 @@ and get to know those commands as well!
 
 ## 📦 NOMP Install
 
-The NOMP options install everything you need to run NOMP and gets your first coin installed. It is recommended to have at least 4GB ram in order to function properly.
+The NOMP options install everything you need to run NOMP and gets your first coin installed. It is recommended to have at least 2GB ram in order to function properly.
 
-During the initial setup you will be asked similar questions as the YiiMP installer in addition you will also be asked for the first coin that you wish to have installed. After all the questions are answered setup will be fully automated.
+During the initial setup you will be asked similar questions as the YiiMP installer in addition you will also be asked for the first coin that you wish to have installed. After all the questions are answered setup will be fully automated until the coin installation where you will need to copy and paste the coind and coin-cli names.
 
 #### To help make your server more secure we have changed the install locations and directory structure of NOMP as follows:
 
 Directory | Files
 :--|:-:
 /home/crypto-data/nomp | General install location for NOMP
-/home/crypto-data/nomp/starts | screens and stratum sh files - you do not need to run these
-/home/crypto-data/nomp/site | New location for NOMP files
-/home/crypto-data/nomp/site/website | Location of NOMP html files
+/home/crypto-data/nomp/starts | required start files
+/home/crypto-data/nomp/core | New location for NOMP nodejs files
+/home/crypto-data/nomp/configuration | New location for NOMP config files
+/home/crypto-data/nomp/logs | New location for NOMP/Nginx log files
+/home/crypto-data/nomp/site/web | New Location of NOMP html files
 /home/crypto-data/wallets | New location for wallets
 
-Permissions have been setup correctly allowing your main user write acess to the /home/crypto-data directories! Changing file or directory permissions after install will cause your YiiMP to not function correctly, you have been warned!!
+Permissions have been setup correctly allowing your main user write acess to the /home/crypto-data directories! Changing file or directory permissions after install will cause your NOMP to not function correctly, you have been warned!!
 
 By default all non web ports have been blocked by the firewall, with exception of the first default coin. To open any other ports type:
 ```
@@ -316,8 +322,8 @@ https://bitcointalk.org/index.php?topic=4980079.0
 
 Donations for continued support of this script are welcomed at:
 
-* BTC 3DvcaPT3Kio8Hgyw4ZA9y1feNnKZjH7Y21
-* BCH qrf2fhk2pfka5k649826z4683tuqehaq2sc65nfz3e
-* ETH 0x6A047e5410f433FDBF32D7fb118B6246E3b7C136
+* BTC 3LegHBKdAmcdN9usBae5UPVnQWk5vCrUDy
+* BCH 1C5b876B7ZJo6P1hjqKGBmorYoY8RuAm7D
+* ETH 0x7BAEaae15De37A93e5Bcf27622F2E65ede90A35C
 * ETC 0xc5C3E017087adB10C2FE085cF8eA9b1c9867Ff28
-* LTC MLS5pfgb7QMqBm3pmBvuJ7eRCRgwLV25Nz
+* LTC MAutGukgacY74Pv38k4DGs91RGTDbmUSmQ
